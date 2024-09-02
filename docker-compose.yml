@@ -1,0 +1,8 @@
+services:
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    restart: unless-stopped
+    ports:
+      - "5677:8080"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
