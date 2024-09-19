@@ -6,3 +6,14 @@ services:
       - "5677:8080"
     extra_hosts:
       - "host.docker.internal:host-gateway"
+    environment:
+      WEBUI_AUTH: False
+      TASK_MODEL: "llama3.1"
+      ENABLE_RAG_WEB_SEARCH: True
+      RAG_WEB_SEARCH_ENGINE: "duckduckgo"
+      RAG_WEB_SEARCH_RESULT_COUNT: 5
+      RAG_WEB_SEARCH_CONCURRENT_REQUESTS: 100
+    volumes:
+      - data:/app/backend/data
+volumes:
+  data:
